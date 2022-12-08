@@ -1,0 +1,54 @@
+Notes
+
+SQLite3 (vs PostgeSQL)
+
+to open SQLite3, command:
+sqlite3 <file_name>
+    .tables == \d
+    .schema == the SQL that was written to create the tables
+
+    to insert
+    INSERT INTO <table_name>
+        (col1, col2, etc)
+        VALUES
+        (val1, val2, etc),
+        (val3, val4, etc);
+
+        to update
+
+        UPDATE <table_name>
+            SET col1=val1
+            WHERE id = 9;
+
+            UPDATE users
+            SET age = 21
+            WHERE id = 3;
+
+            UPDATE users
+            SET age = 21
+            WHERE birthyear >= 2001;
+
+
+RAILS
+    MVC = Model View Controller
+        the model is concerned with the retreival of inforamtion from storage (and any logic)
+        view is concerned with presenting the info
+        controller is concerned with constructing the servers HTTP response; sends commands to the model to fetch and update; and to the view to display
+            it is the interface between the model and the view
+    CoC = convention over configuration
+        preloaded with configuration and the developer only has to be worried when doing something unconventional
+        *naming conventions = cats == model name- Cats, default controller-CatsController
+        ^ will automatically know how to load and tie together
+    REST = Representational State Transfer
+        architechtual style for web services
+        a RESTful web service uses standard operations
+            GET     along with a specific id, will return data on that item
+            POST
+            PATCH
+            DELETE
+        RESTful webservices are stateless (each request is independent of others)
+        Rails defaults to a RESTful API using [resources] method - automatically generates routes by linking HTTP verbs and URIs to controller actions
+
+    Components
+        Active Record
+            is an ORM (object relational mapping)
